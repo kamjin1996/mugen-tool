@@ -1,0 +1,80 @@
+JFDML JFormDesigner: "7.0.0.6.255" Java: "11.0.5" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			name: "this"
+			"title": "mugen人物包添加工具"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+				name: "dialogPane"
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par t {seq l {space :p:38:p, par l {seq t {comp tip1::::379:x, space :::p}, seq l {comp scrollPane2::::338:x, space :p:47:p}, seq {par l {comp label3:::p::p, seq l {comp scrollPane1:::p:154:p, space u:::p, comp selectButton:::p::p}}, space :0:57:x}}}, seq l {space :p:82:p, comp label4:::p::p, space :0:83:x}}"
+					"$verticalGroup": "par l {seq l {comp label3:::p::p, space :::p, par l {comp scrollPane1:::p::p, comp selectButton:::p::p}, space :::p, comp scrollPane2:::p:102:p, space :::p, comp tip1:::p:24:p, space ::13:x, comp label4:::p::p}}"
+				} ) {
+					name: "contentPanel"
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "selectButton"
+						"text": "点击选择人物包所在路径"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "fileSelectButtonActionPerformed", true ) )
+					} )
+					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+						name: "scrollPane1"
+						add( new FormComponent( "javax.swing.JTextArea" ) {
+							name: "selectedPathText"
+						} )
+					} )
+					add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+						name: "scrollPane2"
+						add( new FormComponent( "javax.swing.JTextArea" ) {
+							name: "showChildsText"
+						} )
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "tip1"
+						"text": "↑ 请手动选中复制，或者点击导入将人物追加到select.def中"
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label3"
+						"text": "已选择路径："
+					} )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "label4"
+						"text": "或者点击导入按钮选中select.def自动导入人物 ↓"
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "North"
+				} )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class net.miginfocom.swing.MigLayout ) {
+					"$layoutConstraints": "insets dialog,alignx right"
+					"$columnConstraints": "[fill][fill][fill][fill][fill][fill][fill][fill][button,fill][button,fill]"
+					"$rowSpecs": "[fill]"
+					"$rowConstraints": "[][]"
+				} ) {
+					name: "buttonBar"
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "okButton"
+						"text": "分析"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "okButtonActionPerformed", true ) )
+					}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+						"value": "cell 8 1"
+					} )
+					add( new FormComponent( "javax.swing.JButton" ) {
+						name: "importToSelectdefButton"
+						"text": "导入到select.def"
+						addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "importToSelectdefButtonActionPerformed", true ) )
+					}, new FormLayoutConstraints( class net.miginfocom.layout.CC ) {
+						"value": "cell 9 1"
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "South"
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "Center"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 425, 320 )
+		} )
+	}
+}
